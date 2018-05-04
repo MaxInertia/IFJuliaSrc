@@ -1,4 +1,3 @@
-# This way is much better!
 abstract type UnitOfMeasure end
 macro defineUnitOfMeasure(name)
     return :(
@@ -10,14 +9,6 @@ end
 @defineUnitOfMeasure Time
 @defineUnitOfMeasure Velocity
 @defineUnitOfMeasure Displacement
-
-# Although this would be nice (error: type declarations must be global)
-#=
-units = [:Time, :Velocity, :Displacement]
-For u in units
-    @defineUnitOfMeasure u
-end
-=#
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
