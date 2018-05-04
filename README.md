@@ -1,4 +1,4 @@
-## Fun with MacroProgramming
+## Fun with MetaProgramming
 
 ### MP Structs!
 
