@@ -1,14 +1,15 @@
 abstract type UnitOfMeasure end
-macro defineUnitOfMeasure(name)
+macro UnitOfMeasure(name)
     return :(
         struct $name{T <: Number} <: UnitOfMeasure
             value::T
         end
     )
 end
-@defineUnitOfMeasure Time
-@defineUnitOfMeasure Velocity
-@defineUnitOfMeasure Displacement
+
+@UnitOfMeasure Time
+@UnitOfMeasure Velocity
+@UnitOfMeasure Displacement
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
