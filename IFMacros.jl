@@ -3,7 +3,7 @@ module IFMacros
 """
 Macro to concisely define a struct with a single field.
 Example Usage:
-    `@defineStruct Quantity{T <: Number} value T`
+    `@Struct Quantity{T <: Number} value T`
 """
 macro Struct(structName, field, fieldType)
     return :(
