@@ -1,14 +1,23 @@
-# This way of introducing Units is fairly concise, but repetitive.
+# This way is much better!
 abstract type UnitOfMeasure end
-struct Velocity{T <: Number} <: UnitOfMeasure
-    value::T
+macro defineUnitOfMeasure(name)
+    return :(
+        struct $name{T <: Number} <: UnitOfMeasure
+            value::T
+        end
+    )
 end
-struct Time{T <: Number} <: UnitOfMeasure
-    value::T
+@defineUnitOfMeasure Time
+@defineUnitOfMeasure Velocity
+@defineUnitOfMeasure Displacement
+
+# Although this would be nice (error: type declarations must be global)
+#=
+units = [:Time, :Velocity, :Displacement]
+For u in units
+    @defineUnitOfMeasure u
 end
-struct Displacement{T <: Number} <: UnitOfMeasure
-    value::T
-end
+=#
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
