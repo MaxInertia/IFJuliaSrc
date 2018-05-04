@@ -9,19 +9,6 @@ end
 struct Displacement{T <: Number} <: UnitOfMeasure
     value::T
 end
-# Would benefit if abstract types could have fields. Example:
-#=
-abstract type Unit{T <: Number}
-    value::T
-end
-=#
-# Alternatively subtype non-abstract struct. Ex:
-#=
-struct Unit{T <: Number}
-    value::T
-end
-struct Velocity{T <: Number} <: Unit{T} end
-=#
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
