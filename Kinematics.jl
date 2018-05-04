@@ -14,6 +14,13 @@ abstract type Unit{T <: Number}
     value::T
 end
 =#
+# Alternatively subtype non-abstract type. Ex:
+#=
+struct Unit{T <: Number}
+    value::T
+end
+struct Velocity{T <: Number} <: Unit{T} end
+=#
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
