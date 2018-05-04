@@ -1,8 +1,19 @@
+# This way of introducing Units is fairly concise, but repetitive.
 struct Velocity{T <: Number}
     value::T
 end
-struct Time{T <: Number} value::T end
-struct Displacement{T <: Number} value::T end
+struct Time{T <: Number}
+    value::T
+end
+struct Displacement{T <: Number}
+    value::T
+end
+# Would benefit if abstract structs could have fields. Example:
+#=
+abstract type Unit{T <: Number}
+    value::T
+end
+=#
 
 import Base.*
 # Note we implement both orderings of the parameters for multiplication
