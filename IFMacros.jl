@@ -16,4 +16,4 @@ macro Struct(structName, field, fieldType)
     )
 end
 
-end #IFMacros
+end # IFMacros module

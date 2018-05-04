@@ -1,3 +1,5 @@
+module Kinematics
+
 abstract type UnitOfMeasure end
 macro UnitOfMeasure(name)
     return :(
@@ -19,3 +21,5 @@ import Base.*
 import Base./
 # Note that only one ordering of the parameters is permitted for division
 /(d::Displacement, v::Velocity) = Time(d.value / v.value)
+
+end # Kinematics module
