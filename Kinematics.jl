@@ -1,20 +1,21 @@
 # This way of introducing Units is fairly concise, but repetitive.
-struct Velocity{T <: Number}
+abstract type UnitOfMeasure end
+struct Velocity{T <: Number} <: UnitOfMeasure
     value::T
 end
-struct Time{T <: Number}
+struct Time{T <: Number} <: UnitOfMeasure
     value::T
 end
-struct Displacement{T <: Number}
+struct Displacement{T <: Number} <: UnitOfMeasure
     value::T
 end
-# Would benefit if abstract structs could have fields. Example:
+# Would benefit if abstract types could have fields. Example:
 #=
 abstract type Unit{T <: Number}
     value::T
 end
 =#
-# Alternatively subtype non-abstract type. Ex:
+# Alternatively subtype non-abstract struct. Ex:
 #=
 struct Unit{T <: Number}
     value::T
