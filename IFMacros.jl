@@ -1,9 +1,12 @@
 module IFMacros
 
+export @Struct
+
 """
 Macro to concisely define a struct with a single field.
 Example Usage:
-    `@Struct Quantity{T <: Number} value T`
+    - `@Struct Quantity value Number`
+    - `@Struct(Quantity, value, Number)`
 """
 macro Struct(structName, field, fieldType)
     return :(
