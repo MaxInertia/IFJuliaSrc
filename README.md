@@ -12,17 +12,24 @@ macro Struct(structName, fieldWithType)
 end
 ```
 
-This enables more concise struct definitions.
+This enables (slightly) more concise struct definitions:
 
 ```julia
+@Struct Time value::Number
 @Struct Velocity value::Number
 @Struct Displacement value::Number
-@Struct Time value::Number
 ```
-You can use *Generics* too.
+You can use *Generics* too:
 
 ```julia
+@Struct Time{T} value::T
+@Struct Velocity{T} value::T
+@Struct Displacement{T} value::T
+```
+
+*Generics* with *Type Constraints*:
+```
+@Struct Time{T <: Number} value::T
 @Struct Velocity{T <: Number} value::T
 @Struct Displacement{T <: Number} value::T
-@Struct Time{T <: Number} value::T
 ```
