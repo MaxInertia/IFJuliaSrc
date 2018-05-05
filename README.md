@@ -28,7 +28,7 @@ You can use *Generics* too:
 ```
 
 *Generics* with *Type Constraints*:
-```
+```julia
 @Struct Time{T <: Number} value::T
 @Struct Velocity{T <: Number} value::T
 @Struct Displacement{T <: Number} value::T
